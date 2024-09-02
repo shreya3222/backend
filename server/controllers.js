@@ -4,6 +4,7 @@ const { Address } = require('./models');
 const getTransactions = async (req, res) => {
   const { address } = req.params;
   try {
+
     // Check if transactions are already stored in the database
     let addressData = await Address.findOne({ address });
     if (addressData) {
@@ -28,7 +29,6 @@ const getTransactions = async (req, res) => {
     // Store transactions in the database
     addressData = new Address({ address, transactions });
     await addressData.save();
-
     res.json(transactions);
   } catch (error) {
     res.status(500).send('Error fetching transactions');
@@ -37,7 +37,6 @@ const getTransactions = async (req, res) => {
 
 
 const { EthPrice } = require('./models'); // Import the EthPrice model
-
 const fetchEthPrice = async () => {
   try {
     const response = await axios.get('https://api.coingecko.com/api/v3/simple/price', {
@@ -52,15 +51,11 @@ const fetchEthPrice = async () => {
     // Store the price in the database
     const newPrice = new EthPrice({ price: ethPrice });
     await newPrice.save();
-
     console.log('Ethereum price stored:', ethPrice);
   } catch (error) {
     console.error('Error fetching Ethereum price:', error);
   }
 };
-
-
-
 
 const getTotalExpenses = async (req, res) => {
     const { address } = req.params;
@@ -70,7 +65,6 @@ const getTotalExpenses = async (req, res) => {
       if (!addressData) {
         return res.status(404).send('Address not found');
       }
-  
       // Calculate total expenses
       let totalExpenses = 0;
       addressData.transactions.forEach((tx) => {

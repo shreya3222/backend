@@ -41,7 +41,6 @@ const ethPriceSchema = new mongoose.Schema({
   const EthPrice = mongoose.model('EthPrice', ethPriceSchema);
 const Address = mongoose.model('Address', addressSchema);
 
-
 module.exports = { Address, EthPrice }; // Export the new model
 
 
