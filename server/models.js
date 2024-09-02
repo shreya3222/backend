@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://shreyagore68:Shreya135@shreya.rc7ri.mongodb.net/?retryWrites=true&w=majority&appName=Shreya");
+mongoose.connect(process.env.MONGODB_URI);
 
 // Create a schema for storing transac"tions
 const transactionSchema = new mongoose.Schema({

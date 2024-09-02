@@ -13,7 +13,7 @@ This project includes a Node.js application that performs the following tasks:
   - Endpoint: `GET /transactions/:address`
   or in browser- `http://localhost:3000/transactions/0xce94e5621a5f7068253c42558c147480f38b5e0d`
   - Fetches transactions for the provided Ethereum address and stores them in MongoDB.
-  ![Diagram](WhatsApp Image 2024-09-02 at 10.48.56_646c64be.jpg)
+ 
   
 - **Periodic Ethereum Price Fetching:**
   - Fetches Ethereum price every 10 minutes and stores it in MongoDB.
@@ -22,7 +22,7 @@ This project includes a Node.js application that performs the following tasks:
   - Endpoint: `GET /expenses/:address`
   in browser- `http://localhost:3000/expenses/0xce94e5621a5f7068253c42558c147480f38b5e0d`
   - Calculates the total expenses for the given address and includes the current Ethereum price in the response.
-  ![Diagram](WhatsApp Image 2024-09-02 at 11.02.21_57d17b0c.jpg)
+ 
 
 ## Technologies Used
 

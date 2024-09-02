@@ -20,7 +20,7 @@ const getTransactions = async (req, res) => {
         startblock: 0,
         endblock: 99999999,
         sort: 'asc',
-        apikey:"5ZH68ZYAMCVF4I1V4W1A66QQJ6RF55RTZA",
+        apikey: process.env.ETHERSCAN_API_KEY,
       },
     });
 
